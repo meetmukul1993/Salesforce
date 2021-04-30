@@ -9,7 +9,7 @@ export default class ApexImperativeMethod extends LightningElement {
         getContactList()
             .then((result) => {
                 this.contacts = result;
-                // console.log(this.contacts.length);
+                console.log(this.contacts.length);
                 this.error = undefined;
             })
             .catch((error) => {
