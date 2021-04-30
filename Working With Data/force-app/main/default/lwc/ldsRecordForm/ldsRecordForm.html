@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Account LDS" icon-name="standard:case">
+        <div class="slds-m-around_small" >
+            <lightning-record-form 
+                record-id={recordId}
+                object-api-name={objectApiName}
+                layout-type="Full"
+                mode = "view"
+                columns="2"
+                onsuccess={successHandler}
+                onsubmit = {submitHandler}
+            ></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

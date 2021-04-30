@@ -1,0 +1,17 @@
+<template>
+    
+    <lightning-card title="LDS Record Edit Form" icon-name="custom:custom35">
+
+        <div class="slds-m-around_small">
+            <lightning-record-edit-form
+                record-id={recordId}
+                object-api-name={objectApiName}
+            >
+        
+            <lightning-input-field field-name="Subject"></lightning-input-field>
+            <lightning-input-field field-name="Status"></lightning-input-field>
+            <lightning-button type="submit" label="Update Case"></lightning-button>
+        </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

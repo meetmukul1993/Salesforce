@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Single Contact" icon-name="custom:custom63">
+        <template if:true={contact.data}>
+            <div class="slds-m-around_medium">
+                <p>{name}</p>
+                <p>{title}</p>
+                <p>{email}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

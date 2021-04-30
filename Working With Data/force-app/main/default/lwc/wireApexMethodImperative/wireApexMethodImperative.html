@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Imperative Apex Method" icon-name="custom:custom35">
+
+        <div class="slds-m-around_medium">
+            <lightning-button onclick={handleEvent} label="Click to get cases" variant="brand"></lightning-button>
+            <template if:true={records}>
+                <template for:each={records} for:item="rec">
+                    <p key={rec.CaseNumber}>{rec.Subject} = {rec.CaseNumber}</p>
+                </template>
+            </template>
+        </div>
+        
+    </lightning-card>
+</template>

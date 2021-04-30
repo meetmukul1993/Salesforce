@@ -1,0 +1,9 @@
+<template>
+    <lightning-input type="text" value={subject} label="Subject" onchange={handleChange}></lightning-input>
+
+    <template if:true={records}>
+        <template for:each={records} for:item="rc">
+            <p key={rc.caseNumber}>{rc.Subject} = {rc.CaseNumber}</p>
+        </template>
+    </template>
+</template>

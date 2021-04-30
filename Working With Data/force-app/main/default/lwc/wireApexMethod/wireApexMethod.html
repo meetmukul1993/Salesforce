@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Wire - Apex Method" icon-name="custom:custom35">
+        <template if:true={contacts.data}>
+            <template for:each={contacts.data} for:item=contact>
+                <p key={contact.ID}>{contact.Name}</p>
+            </template>
+        </template>
+        <template if:false={contacts.data}>
+            <p>Error</p>
+        </template>
+    </lightning-card>
+</template>
