@@ -1,0 +1,18 @@
+<template>
+
+    <template if:false={selectedRecord}>
+        <c-search-component onsearch={handleSearch}></c-search-component>
+    </template>
+    
+    <template if:false ={selectedRecord}>    
+        <template if:true={records}>
+            <template for:each={records} for:item="rec">
+                <c-record-list key = {rec.Id} record = {rec} icon-name={iconName} onselect={handleSelect}></c-record-list>
+            </template>
+        </template>
+    </template>
+
+    <template if:true={selectedRecord}>
+        <p>{selectedRecord.Name}</p>
+    </template>
+</template>
