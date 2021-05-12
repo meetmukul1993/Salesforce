@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="recordId" type="String" />
+    <aura:attribute name="fields" type="String[]" default="['Name','Industry']" />
+    
+    
+    <lightning:recordForm recordId="{!v.recordId}" 
+                          objectApiName="Account"
+                          mode="readonly"
+                          fields="{!v.fields}" />
+</aura:component>
