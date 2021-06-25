@@ -1,0 +1,18 @@
+<template>
+    <lightning-input name="name" label="Name" placeholder="Enter Name..."></lightning-input>
+    <lightning-input name="postalCode" label="Postal Code" placeholder="Enter Postal Code..."></lightning-input>
+    <lightning-input name="telephoneNum" label="Phone" placeholder="Enter Phone..."></lightning-input>
+    <lightning-button label="Search" variant="brand" onclick={handleClick}></lightning-button>
+
+    <lightning-card title="Data Table">
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="key"
+                    data={data}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    onrowaction={callRowAction}>
+            </lightning-datatable>
+        </div>     
+    </lightning-card>
+</template>
