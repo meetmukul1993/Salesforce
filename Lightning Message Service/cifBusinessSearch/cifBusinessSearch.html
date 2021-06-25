@@ -1,0 +1,72 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_large">            
+            <div if:true={isLoading} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+        <div class="slds-grid slds-m-bottom_medium">
+            
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-m-bottom_medium">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">
+                            <abbr class="slds-required" title="required">* </abbr><b>Account Name</b></label>
+                        <div class="slds-form-element__control">
+                            <input name="name" type="text" id="text-input-id-1" placeholder="Enter Account Name…" required
+                                aria-describedby="error-message-unique-id" class="slds-input" aria-invalid="true" />
+                        </div>
+                        <div class="slds-form-element__help" id="error-message-unique-id">Enter a value.</div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-3">
+                            <b>Phone Number</b></label>
+                        <div class="slds-form-element__control">
+                            <input name="telephoneNum" type="text" id="text-input-id-3" placeholder="Enter Phone Number…"
+                                class="slds-input" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-2">
+                            <b>Postal Code</b></label>
+                        <div class="slds-form-element__control">
+                            <input name="postalCode" type="text" id="text-input-id-2" placeholder="Enter PostalCode…"
+                                class="slds-input" />
+                        </div>
+                    </div>
+                </div>
+                <lightning-button label="CIF Business Search" variant="brand" onclick={handleClick}></lightning-button>
+                <template if:true={showError}>
+                    <p><b>{label.NoRecordFoundLabel}</b></p>
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-3"></div>
+            <div class="slds-col slds-size_1-of-3"></div>
+        </div>
+
+        <template if:true={searchButtonClicked}>
+            <div class="slds-grid ">
+                <div class="slds-col slds-size_6-of-6">
+                    <div class="myTable">
+                        <lightning-datatable
+                            class="slds-table_header-fixed_container slds-scrollable_x slds-border_top slds-table"
+                            key-field="key"
+                            data={data}
+                            columns={columns}
+                            hide-checkbox-column="true"
+                            show-row-number-column="true"
+                            onrowaction={callRowAction}>
+                        </lightning-datatable>
+                    </div>
+                    <template if:true={isNext}>
+                        <div class="pagination_button slds-clearfix slds-m-top_small">
+                            <lightning-button onclick={fetchMoreRecords} class="slds-float_right slds-m-left_small" variant="brand" label="Next" title="Next action"></lightning-button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>
